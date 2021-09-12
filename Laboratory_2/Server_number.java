@@ -23,16 +23,7 @@ public class Server_number {
             System.out.println("Connection with client established");
             int attempts = 3;
             do {
-                // серверсокет прослушивает порт 4004
-                // хорошо бы серверу
-                //   объявить о своем запуске
-                // accept() будет ждать пока
-                //кто-нибудь не захочет подключиться
-                // установив связь и воссоздав сокет для общения с клиентом можно перейти
-                // к созданию потоков ввода/вывода.
-                // теперь мы можем принимать сообщения
 
-                // и отправлять
                 out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
                 out.write("Give me the number, you have: " + attempts + " attempts"+"\n");
                 out.flush();
