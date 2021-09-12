@@ -1,4 +1,4 @@
-package Laboratory_1;
+package ru.itis;
 
 public class Ticket {
     String date;

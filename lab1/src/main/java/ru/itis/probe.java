@@ -1,4 +1,4 @@
-package Laboratory_1;
+package ru.itis;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
