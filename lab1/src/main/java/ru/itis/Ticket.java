@@ -7,7 +7,6 @@ public class Ticket {
         this.date = date;
         this.close = close;
     }
-
     public float getClose() {
         return close;
     }
