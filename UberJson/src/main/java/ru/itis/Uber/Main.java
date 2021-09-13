@@ -2,6 +2,8 @@ package ru.itis.Uber;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -14,14 +16,11 @@ public class Main {
         System.out.println(data());
         //Json parser to file
         ObjectMapper objectMapper= new ObjectMapper();
-        /*
         try {
             objectMapper.writeValue(new File("Database.json"), data());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-         */
         //time search trip
         long startTime = System.nanoTime();
         System.out.println("Personal User Trip: "+ searchTrip(3));
