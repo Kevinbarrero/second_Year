@@ -10,11 +10,11 @@ public class probe {
         // read the file
         List<Ticket> eur_Rub = new ArrayList<>();
         List<Ticket> usd_Rub = new ArrayList<>();
-        ticker_List("C:\\Users\\kevin\\OneDrive\\Escritorio\\Lab_1_Info\\Data_rand.csv", eur_Rub);
-        ticker_List("C:\\Users\\kevin\\OneDrive\\Escritorio\\Lab_1_Info\\usd_Rub.csv", usd_Rub);
+        ticker_List("/home/holdandup/IdeaProjects/dis/lab1/src/main/java/ru/itis/EURRUB_210801_210901.csv", eur_Rub);
+        ticker_List("/home//holdandup/IdeaProjects/dis/lab1/src/main/java/ru/itis/USDRUB_210801_210901.csv", usd_Rub);
         // Sort Tickets
         Comparator<Ticket> comparator = Comparator.comparing(c -> Long.valueOf(c.getDate()));
-        Collections.sort(eur_Rub, comparator);
+        eur_Rub.sort(comparator);
         //stats List<Ticker>...
         System.out.println("EUR_RUB STATS");
         System.out.println("Median Score = "+median_score_trading(eur_Rub));
@@ -71,8 +71,8 @@ public class probe {
     }
     public static float median_score_trading(List<Ticket> trading){
         float sum = 0;
-        for (int i = 0; i <trading.size() ; i++) {
-            sum+=trading.get(i).getClose();
+        for (Ticket ticket : trading) {
+            sum += ticket.getClose();
         }
         return sum/trading.size();
     }
